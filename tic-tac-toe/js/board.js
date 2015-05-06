@@ -19,8 +19,8 @@ function Board(){
             var cell = $(this),
                 position = $.inArray(this, $('.cell'));
 
-            if (cell.html() !== '') { 
-                return; 
+            if (cell.html() !== '') {
+                return;
             }
 
             me.game.userTurn(position);
@@ -39,7 +39,9 @@ function Board(){
     /**
      * Draws a symbol in a specific cell.
      */
-    me.drawSymbol = function(cell, symbol) {
+    me.drawSymbol = function(position, symbol) {
+        var cell = $('.cell')[position];
+
         $(cell).html(symbol);
     }
     /**

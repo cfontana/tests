@@ -36,10 +36,10 @@ function Game(board){
             return winner;
         }
 
-        if(me.blankCount === 0){ 
+        if(me.blankCount === 0){
             me.board.showResult("Draw");
 
-            return "draw"; 
+            return "draw";
         }
 
         return "notend";
@@ -48,12 +48,9 @@ function Game(board){
      * handles the User turn
      */
     me.userTurn = function (position) {
-        var cell;
-
         me.blankCount--;
 
-        cell = $('.cell')[position];
-        me.board.drawSymbol(cell, me.symbols[1]);
+        me.board.drawSymbol(position, me.symbols[1]);
 
         me.cells[position] = me.symbols[1];
 
@@ -65,19 +62,17 @@ function Game(board){
      * handles the CPU turn
      */
     me.cpuTurn = function () {
+        var position = me.cpuBestPosition();
 
-        var cell, position = me.cpuBestPosition();
-        
         me.blankCount--;
 
-        cell = $('.cell')[position];
-        me.board.drawSymbol(cell, me.symbols[0]);
+        me.board.drawSymbol(position, me.symbols[0]);
 
         me.cells[position] = me.symbols[0];
 
         me.determineStatus();
     }
-    
+
     me.cpuBestPosition = function () {
         var c = me.cells, cIx, symbolIx, symbol;
 
