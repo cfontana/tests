@@ -101,6 +101,10 @@ function Game(board){
 
         if (c[0] === '') {return 0;}
         if (c[6] === '') {return 6;}
+
+        for (cIx = 0; cIx < 9; cIx++) {
+            if (c[cIx] === '') {return cIx;}
+        }
     }
 
     me.init(board);
