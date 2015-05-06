@@ -1,7 +1,7 @@
 /**
  * Define the "Game" object
  */
-function Game(board){
+var Game = (function(board){
     var me = this;
     /**
      * initializes Game object
@@ -108,4 +108,4 @@ function Game(board){
     }
 
     me.init(board);
-}
+});

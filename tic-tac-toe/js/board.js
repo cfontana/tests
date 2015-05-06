@@ -1,7 +1,7 @@
 /**
  * Define the "Board" object
  */
-function Board(){
+var Board = (function(){
     var me = this;
     /**
      * initializes Board object
@@ -52,4 +52,4 @@ function Board(){
     }
 
     this.init();
-}
+});
